@@ -41,15 +41,21 @@ app.get("/", function (req, res) {
 });
 
 //Backend call example
-app.get("/example/:var", function (req, res) {
-	const v = req.params.var;
-	runPythonScript("scripts/backend.py", ["example", v], (err, result) => {
-		if (err) {
-			res.status(500).send(err);
-		} else {
-			res.send(JSON.parse(result));
-		}
-	});
+app.get("/ordina/:nome/:classe/:numero", function (req, res) {
+	const nome = req.params.nome;
+	const classe = req.params.classe;
+	const numero = req.params.numero;
+	runPythonScript(
+		"scripts/backend.py",
+		["hook", `${nome} di ${classe} vuole ${numero} clementine`],
+		(err, result) => {
+			if (err) {
+				res.status(500).send(err);
+			} else {
+				res.send(JSON.parse(result));
+			}
+		},
+	);
 });
 
 //Open the server
