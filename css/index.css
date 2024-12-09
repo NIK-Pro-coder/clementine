@@ -41,7 +41,18 @@ input::placeholder {
 
 .formOrdine {
 	display: grid;
-	grid-template-areas: "personal . classe . numbers . ordina";
+	grid-template-areas:
+		"personal"
+		"classe"
+		"numbers"
+		"ordina";
+	row-gap: 15px;
+}
+
+@media screen and (orientation: landscape) {
+	.formOrdine {
+		grid-template-areas: "personal . classe . numbers . ordina";
+	}
 }
 
 .outline {
