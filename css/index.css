@@ -1,9 +1,73 @@
+html {
+	background: #a53e2b;
+	height: 100%;
+}
+
+.maincontainer {
+	display: grid;
+
+	grid-template-areas:
+		". . info . foto . ."
+		". ordine ordine ordine ordine ordine .";
+
+	row-gap: 20px;
+}
+
 .error {
 	padding: 5px;
-	background: red;
+	background: rgba(255, 0, 0, 0.75);
+	border-radius: 5px;
 }
 
 .success {
 	padding: 5px;
-	background: limegreen;
+	background: rgba(50, 205, 50, 0.75);
+	border-radius: 5px;
+}
+
+input {
+	background: #b64f3c;
+	outline: none;
+}
+
+input::placeholder {
+	color: darkslategray;
+}
+
+.ordine {
+	grid-area: ordine;
+	text-align: center;
+}
+
+.formOrdine {
+	display: grid;
+	grid-template-areas: "personal . classe . numbers . ordina";
+}
+
+.outline {
+	border: solid #b64f3c 2px;
+	padding: 5px;
+	box-shadow: 5px 5px 5px #b64f3c;
+	border-radius: 5px;
+}
+
+.ordina,
+.ordina:hover {
+	grid-area: ordina;
+	background: transparent;
+}
+
+.ordina:hover {
+	background: #b04936;
+}
+
+.mainimage {
+	grid-area: foto;
+	border-radius: 15px;
+
+	box-shadow: 5px 5px 5px #b64f3c;
+}
+
+.maininfo {
+	grid-area: info;
 }

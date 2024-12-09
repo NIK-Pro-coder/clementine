@@ -14,10 +14,12 @@ def addEntry(func) :
 HOOK_URL="https://discord.com/api/webhooks/1302646064225980426/mN8vyNtOFnwqbEzh0Io_3XAkgDzIqglyrxFAB6YVjd8DbzVnJZZoPuFFRFGLJPacco0e"
 
 @addEntry
-def hook(text) :
+def hook(nome, classe, numero, consegna) :
 	global hookUrl
 
-	text = text.strip()
+	text = f"{nome} vuole {numero} clementine"
+	if consegna == "true" :
+		text += f" consegnate in {classe}"
 
 	if not(text) :
 		print(json.dumps({

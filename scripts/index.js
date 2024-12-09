@@ -12,18 +12,24 @@ function order() {
 
 	const numero = fields.clementine.value;
 
-	const classe = fields.classe.value;
-	if (classe == "") {
-		errored = true;
-		document.getElementById("classError").hidden = false;
-	} else {
-		document.getElementById("classError").hidden = true;
-		if (isNaN(classe[0]) || !isNaN(classe[1]) || classe.length > 2) {
+	const consegna = fields.consegna.checked;
+	let classe = fields.classe.value;
+
+	if (consegna) {
+		if (classe == "") {
 			errored = true;
-			document.getElementById("classErrorInvalid").hidden = false;
+			document.getElementById("classError").hidden = false;
 		} else {
-			document.getElementById("classErrorInvalid").hidden = true;
+			document.getElementById("classError").hidden = true;
+			if (isNaN(classe[0]) || !isNaN(classe[1]) || classe.length != 2) {
+				errored = true;
+				document.getElementById("classErrorInvalid").hidden = false;
+			} else {
+				document.getElementById("classErrorInvalid").hidden = true;
+			}
 		}
+	} else {
+		classe = "no";
 	}
 
 	const nome = fields.nome.value;
@@ -40,5 +46,11 @@ function order() {
 	}
 	document.getElementById("successHead").hidden = false;
 
-	fetch(`/ordina/${nome}/${classe}/${numero}`);
+	fetch(`/ordina/${nome}/${classe}/${numero}/${consegna}`);
+}
+
+function updClass() {
+	const show = document.getElementById("consegna").checked;
+
+	document.getElementById("classe").hidden = !show;
 }

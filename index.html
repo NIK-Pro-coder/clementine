@@ -5,50 +5,92 @@
 		<link rel="stylesheet" href="css/index.css" />
 	</head>
 	<body>
-		<h1>Compra qui le clementine del pastafresh!</h1>
+		<h1 style="text-align: center">
+			Compra qui le clementine del pastafresh!
+		</h1>
 
-		<h3 class="success" id="successHead" hidden>
-			Le tue clementine sono state ordinate!
-		</h3>
+		<div class="maincontainer">
+			<p class="maininfo outline">Lorem ipsum dolor sit amet</p>
 
-		<form name="ordinazione">
-			<p>Tieni conto che 17 clementine sono più o meno 1kg!</p>
-			<label for="clementine">Numero di clementine: </label>
-			<input
-				id="clementine"
-				type="number"
-				min="1"
-				max="100"
-				value="10"
-				oninput="printVal()"
-				name="clementine"
-			/>
-			<p style="display: inline" id="numDisplay">Costo: € 1.5</p>
+			<img src="images/whatClasses.jpeg" class="mainimage" />
 
-			<br />
-			<p class="error" id="classError" hidden>
-				Per favore compila questo campo
-			</p>
-			<p class="error" id="classErrorInvalid" hidden>
-				Ti ho chiesto una classe, non un frutto
-			</p>
-			<label for="classe">Classe:</label>
-			<input id="classe" name="classe" placeholder="Esempio: 5B" />
+			<div class="ordine">
+				<h3 class="success" id="successHead" hidden>
+					Le tue clementine sono state ordinate!
+				</h3>
 
-			<br />
-			<p class="error" id="nameError" hidden>
-				Per favore compila questo campo
-			</p>
-			<label for="nome">Nome:</label>
-			<input id="nome" name="nome" placeholder="Esempio: Mario Rossi" />
+				<form name="ordinazione" class="formOrdine">
+					<div style="grid-area: numbers" class="outline">
+						<p style="display: inline">
+							Tieni conto che 17 clementine sono più o meno 1kg!
+						</p>
+						<br />
+						<br />
 
-			<br />
-			<input
-				type="button"
-				id="submit"
-				value="Ordina!"
-				onclick="order()"
-			/>
-		</form>
+						<label for="clementine">Numero di clementine: </label>
+						<input
+							id="clementine"
+							type="number"
+							min="1"
+							max="100"
+							value="10"
+							oninput="printVal()"
+							name="clementine"
+						/>
+						<p style="display: inline" id="numDisplay">
+							Costo: € 1.5
+						</p>
+					</div>
+
+					<div style="grid-area: personal" class="outline">
+						<p class="error" id="nameError" hidden>
+							Per favore compila questo campo
+						</p>
+						<label for="nome">Nome:</label>
+						<input
+							id="nome"
+							name="nome"
+							placeholder="Esempio: Mario Rossi"
+						/>
+					</div>
+
+					<div style="grid-area: classe" class="outline">
+						<label for="consegna"
+							>Consegna in classe (+ €0.10)</label
+						>
+						<input
+							type="checkbox"
+							id="consegna"
+							value="show"
+							onchange="updClass()"
+						/>
+
+						<div id="classe" hidden>
+							<p class="error" id="classError" hidden>
+								Per favore compila questo campo
+							</p>
+							<p class="error" id="classErrorInvalid" hidden>
+								Ti ho chiesto una classe, non un frutto
+							</p>
+							<label for="classe">Classe:</label>
+							<input
+								id="classe"
+								name="classe"
+								placeholder="Esempio: 5B"
+							/>
+						</div>
+					</div>
+
+					<button
+						type="button"
+						id="submit"
+						onclick="order()"
+						class="ordina outline"
+					>
+						Ordina!
+					</button>
+				</form>
+			</div>
+		</div>
 	</body>
 </html>
