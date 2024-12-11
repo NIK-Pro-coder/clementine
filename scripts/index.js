@@ -5,6 +5,17 @@ function printVal() {
 	disp.innerHTML = `Costo: € ${Math.round(input.value * 15) / 100}`;
 }
 
+function changeNum(amt) {
+	let input = document.getElementById("clementine");
+
+	input.value = Math.max(
+		1,
+		Math.min(parseInt(input.value) + parseInt(amt), 100),
+	);
+
+	printVal();
+}
+
 function order() {
 	const fields = document.forms["ordinazione"].getElementsByTagName("input");
 

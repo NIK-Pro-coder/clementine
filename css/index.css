@@ -1,16 +1,27 @@
-html {
-	background: #a53e2b;
-	height: 100%;
+:root {
+	--primary: #a53e2b;
+	--primary-light: rgba(255, 255, 255, 0.1);
+	--primary-light2: #b04936;
+	--primary-dark: rgba(0, 0, 0, 0.1);
+	--secondary: #065e3b;
 }
+
+html {
+	background: var(--primary);
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
 
 .maincontainer {
 	display: grid;
 
 	grid-template-areas:
-		". . info . foto . ."
-		". ordine ordine ordine ordine ordine .";
+		". head head head ."
+		". personal . foto ."
+		". classe . foto ."
+		". . . . ."
+		". . ordina . .";
 
-	row-gap: 20px;
+	row-gap: 30px;
 }
 
 .error {
@@ -20,13 +31,14 @@ html {
 }
 
 .success {
+	grid-area: head;
 	padding: 5px;
 	background: rgba(50, 205, 50, 0.75);
 	border-radius: 5px;
 }
 
 input {
-	background: #b64f3c;
+	background: var(--primary-light);
 	outline: none;
 }
 
@@ -39,27 +51,12 @@ input::placeholder {
 	text-align: center;
 }
 
-.formOrdine {
-	display: grid;
-	grid-template-areas:
-		"personal"
-		"classe"
-		"numbers"
-		"ordina";
-	row-gap: 15px;
-}
-
-@media screen and (orientation: landscape) {
-	.formOrdine {
-		grid-template-areas: "personal . classe . numbers . ordina";
-	}
-}
-
 .outline {
-	border: solid #b64f3c 2px;
+	border: solid var(--secondary) 5px;
 	padding: 5px;
-	box-shadow: 5px 5px 5px #b64f3c;
+	box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.5);
 	border-radius: 5px;
+	background: white;
 }
 
 .ordina,
@@ -69,16 +66,49 @@ input::placeholder {
 }
 
 .ordina:hover {
-	background: #b04936;
+	background: var(--primary-light2);
 }
 
 .mainimage {
 	grid-area: foto;
-	border-radius: 15px;
-
-	box-shadow: 5px 5px 5px #b64f3c;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 10px;
+}
+.mainimage img {
+	border-radius: 25px;
+	box-shadow: 5px 5px 5px var(--primary-light);
 }
 
 .maininfo {
 	grid-area: info;
+}
+
+.numbers {
+	display: flex;
+	flex-direction: row;
+	gap: 15px;
+
+	align-items: center;
+	justify-content: space-around;
+}
+
+.numbers button {
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	background: white;
+}
+.numbers button:hover {
+	background: var(--primary-light);
+}
+
+.classe {
+	display: flex;
+	flex-direction: column;
+
+	justify-content: space-around;
+	align-items: center;
 }
