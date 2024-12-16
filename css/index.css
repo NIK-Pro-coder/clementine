@@ -10,6 +10,7 @@ html {
 	background: var(--primary);
 	height: 100%;
 	font-family: Arial, Helvetica, sans-serif;
+}
 
 .maincontainer {
 	display: grid;
@@ -18,7 +19,6 @@ html {
 		". head head head ."
 		". personal . foto ."
 		". classe . foto ."
-		". . . . ."
 		". . ordina . .";
 
 	row-gap: 30px;
@@ -52,21 +52,25 @@ input::placeholder {
 }
 
 .outline {
-	border: solid var(--secondary) 5px;
+	border: solid var(--secondary) 3px;
 	padding: 5px;
-	box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.5);
-	border-radius: 5px;
-	background: white;
+	box-shadow: 0 10px 0.4em rgba(0, 0, 0, 0.5);
+	border-radius: 25px;
+	background: rgb(209, 196, 175);
+}
+
+input:hover {
+	background: rgba(255, 255, 255, 0.01);
 }
 
 .ordina,
 .ordina:hover {
 	grid-area: ordina;
-	background: transparent;
+	background: rgb(209, 196, 175);
 }
 
 .ordina:hover {
-	background: var(--primary-light2);
+	background: rgba(209, 196, 175, 0.5);
 }
 
 .mainimage {
@@ -106,9 +110,18 @@ input::placeholder {
 }
 
 .classe {
+	grid-area: classe;
 	display: flex;
 	flex-direction: column;
 
 	justify-content: space-around;
 	align-items: center;
+}
+
+.nome {
+	grid-area: personal;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }

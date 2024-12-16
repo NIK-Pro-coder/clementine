@@ -10,33 +10,39 @@
 		</h1>
 
 		<form name="ordinazione" class="maincontainer">
-			<div class="mainimage outline">
-				<img src="images/whatClasses.jpeg" />
-				<div style="grid-area: numbers">
-					<div class="numbers">
-						<button type="button" onclick="changeNum(1)">+</button>
-						<input
-							id="clementine"
-							type="number"
-							min="1"
-							max="100"
-							value="10"
-							oninput="printVal()"
-							name="clementine"
-						/>
-						<button type="button" onclick="changeNum(-1)">-</button>
+			<div class="mainimage">
+				<figure style="height: 100%" class="outline">
+					<img src="images/whatClasses.jpeg" />
+					<div style="grid-area: numbers">
+						<div class="numbers">
+							<button type="button" onclick="changeNum(-1)">
+								-
+							</button>
+							<input
+								id="clementine"
+								type="number"
+								min="1"
+								max="100"
+								value="10"
+								oninput="printVal()"
+								name="clementine"
+							/>
+							<button type="button" onclick="changeNum(1)">
+								+
+							</button>
+						</div>
+						<p style="text-align: center" id="numDisplay">
+							Costo: € 1.5
+						</p>
 					</div>
-					<p style="text-align: center" id="numDisplay">
-						Costo: € 1.5
-					</p>
-				</div>
+				</figure>
 			</div>
 
 			<h3 class="success" id="successHead" hidden>
 				Le tue clementine sono state ordinate!
 			</h3>
 
-			<div style="grid-area: personal" class="outline">
+			<div class="nome outline">
 				<p class="error" id="nameError" hidden>
 					Per favore compila questo campo
 				</p>
@@ -48,7 +54,7 @@
 				/>
 			</div>
 
-			<div style="grid-area: classe" class="outline classe">
+			<div class="outline classe">
 				<div>
 					<label for="consegna">Consegna in classe (+ €0.10)</label>
 					<input
@@ -66,12 +72,14 @@
 					<p class="error" id="classErrorInvalid" hidden>
 						Ti ho chiesto una classe, non un frutto
 					</p>
-					<label for="classe">Classe:</label>
-					<input
-						id="classe"
-						name="classe"
-						placeholder="Esempio: 5B"
-					/>
+					<div>
+						<label for="classe">Classe:</label>
+						<input
+							id="classe"
+							name="classe"
+							placeholder="Esempio: 5B"
+						/>
+					</div>
 				</div>
 			</div>
 
@@ -85,5 +93,6 @@
 				Ordina!
 			</button>
 		</form>
+		<div class="ciao"></div>
 	</body>
 </html>
