@@ -7,33 +7,46 @@
 }
 
 @font-face {
-	font-family: myFirstFont;
+	font-family: merriweather;
 	src: url(Merriweather-LightItalic.ttf);
-	font-weight: bold;
+	font-weight: normal;
 }
 
 html {
 	background: var(--primary);
 	height: 100%;
-	font-family: myFirstFont;
+	font-family: merriweather;
 }
 
 .maincontainer {
 	display: grid;
 
 	grid-template-areas:
-		". head head head ."
-		". personal . foto ."
-		". classe . foto ."
-		". . ordina . .";
+		". head ."
+		". foto ."
+		". personal ."
+		". classe ."
+		". ordina ."
+		". . .";
 
 	row-gap: 30px;
+}
+
+@media screen and (min-width: 830px) {
+	.maincontainer {
+		grid-template-areas:
+			". head head head ."
+			". personal . foto ."
+			". classe . foto ."
+			". . ordina . .";
+	}
 }
 
 .error {
 	padding: 5px;
 	background: rgba(255, 0, 0, 0.75);
 	border-radius: 5px;
+	font-size: 0.5em;
 }
 
 .success {
@@ -69,14 +82,22 @@ input:hover {
 	background: rgba(255, 255, 255, 0.01);
 }
 
-.ordina,
-.ordina:hover {
+.ordina {
 	grid-area: ordina;
-	background: rgb(209, 196, 175);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.ordina:hover {
-	background: rgba(209, 196, 175, 0.5);
+.ordina button {
+	width: 60%;
+}
+
+@media screen and (min-width: 830px) {
+	.ordina button {
+		width: 100%;
+	}
 }
 
 .mainimage {
@@ -117,11 +138,15 @@ input:hover {
 
 .classe {
 	grid-area: classe;
+	text-align: center;
+
 	display: flex;
 	flex-direction: column;
 
-	justify-content: space-around;
 	align-items: center;
+	justify-content: space-around;
+
+	font-size: 1.2em;
 }
 
 .nome {
@@ -130,4 +155,12 @@ input:hover {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+	font-size: 1.8em;
+}
+
+.nome input {
+	width: 60%;
+	border-radius: 5px;
+	border: solid 2px gray;
 }
