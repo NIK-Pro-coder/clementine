@@ -11,7 +11,7 @@ def addEntry(func) :
 	cmdict[func.__name__] = func
 	return func
 
-HOOK_URL="https://discord.com/api/webhooks/1302646064225980426/mN8vyNtOFnwqbEzh0Io_3XAkgDzIqglyrxFAB6YVjd8DbzVnJZZoPuFFRFGLJPacco0e"
+HOOK_URL="https://discord.com/api/webhooks/1318505561268158475/0hQswuLjik9jhTnz6a_gmdCWp_ritjZmm_6i_8NOOHm5hJ-awndiYUbaWOLgJMcw-pG7"
 
 @addEntry
 def hook(nome, classe, numero, consegna) :
