@@ -56,6 +56,11 @@ html {
 	border-radius: 5px;
 }
 
+.error,
+.success {
+	text-align: center;
+}
+
 input {
 	background: var(--primary-light);
 	outline: none;
