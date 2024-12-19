@@ -1,5 +1,5 @@
 :root {
-	--primary: #a53e2b;
+	--primary: rgb(210, 79, 55);
 	--primary-light: rgba(255, 255, 255, 0.1);
 	--primary-light2: #b04936;
 	--primary-dark: rgba(0, 0, 0, 0.1);
@@ -32,7 +32,7 @@ html {
 	row-gap: 30px;
 }
 
-@media screen and (min-width: 830px) {
+@media screen and (orientation: landscape) {
 	.maincontainer {
 		grid-template-areas:
 			". head head head ."
@@ -80,7 +80,7 @@ input::placeholder {
 	padding: 5px;
 	box-shadow: 0 10px 0.4em rgba(0, 0, 0, 0.5);
 	border-radius: 25px;
-	background: rgb(209, 196, 175);
+	background: rgb(255, 255, 255);
 }
 
 input:hover {
@@ -99,7 +99,7 @@ input:hover {
 	width: 60%;
 }
 
-@media screen and (min-width: 830px) {
+@media screen and (orientation: landscape) {
 	.ordina button {
 		width: 100%;
 	}
