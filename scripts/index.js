@@ -16,7 +16,16 @@ function changeNum(amt) {
 	printVal();
 }
 
+let antispam = false;
+
 function order() {
+	if (antispam) {
+		document.getElementById("spamError").hidden = false;
+		return;
+	} else {
+		document.getElementById("spamError").hidden = true;
+	}
+
 	const fields = document.forms["ordinazione"].getElementsByTagName("input");
 
 	let errored = false;
@@ -58,6 +67,12 @@ function order() {
 	document.getElementById("successHead").hidden = false;
 
 	fetch(`/ordina/${nome}/${classe}/${numero}/${consegna}`);
+
+	antispam = true;
+
+	setTimeout(() => {
+		antispam = false;
+	}, 10000);
 }
 
 function updClass() {
